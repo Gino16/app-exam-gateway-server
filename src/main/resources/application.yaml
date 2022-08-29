@@ -8,6 +8,10 @@ spring:
           uri: lb://student-service
           predicates: Path=/api/students/**
           filters: StripPrefix=2
+        - id: course-service
+          uri: lb://course-service
+          predicates: Path=/api/courses/**
+          filters: StripPrefix=2
     loadbalancer:
       ribbon:
         enabled: false
