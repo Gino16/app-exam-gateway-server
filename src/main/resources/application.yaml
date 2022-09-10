@@ -16,6 +16,10 @@ spring:
           uri: lb://exam-service
           predicates: Path=/api/exams/**
           filters: StripPrefix=2
+        - id: answer-service
+          uri: lb://answer-service
+          predicates: Path=/api/answer/**
+          filters: StripPrefix=2
     loadbalancer:
       ribbon:
         enabled: false
